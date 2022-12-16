@@ -3,6 +3,7 @@
 package org.example.task5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -41,5 +42,9 @@ public class CategoryTest {
     void categoryTest() {
         driver.findElement(By.xpath("//a[contains(text(),'Новые лица')]")).click();
         Assertions.assertEquals("https://www.livejournal.com/media/novye_lica/", driver.getCurrentUrl());
+    }
+    @AfterAll
+    static void close() {
+        driver.quit();
     }
 }
