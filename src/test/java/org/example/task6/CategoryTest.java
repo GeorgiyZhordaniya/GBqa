@@ -3,11 +3,9 @@
 package org.example.task6;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
+import io.qameta.allure.Description;
+import io.qameta.allure.Issue;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -37,6 +35,9 @@ public class CategoryTest {
     }
 
     @Test
+    @DisplayName("Переход в категорию")
+    @Description("Переход в категорию постов")
+    @Issue(" https://www.livejournal.com/")
     void categoryTest() {
         String url = new MainPage(driver)
                 .clickCategory()

@@ -1,10 +1,11 @@
 package org.example.task6;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.Description;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -24,6 +25,10 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Авторизация")
+    @Description("Вход по логину и паролю")
+    @Issue(" https://www.livejournal.com/")
+    @Severity(SeverityLevel.BLOCKER)
     void loginTest() {
         boolean loginResult = new MainPage(driver)
                 .clickLogin()

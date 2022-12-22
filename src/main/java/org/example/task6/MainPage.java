@@ -1,5 +1,6 @@
 package org.example.task6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -72,6 +73,7 @@ public class MainPage {
         return this;
     }
 
+    @Step("Клик по посту")
     public void clickPost() {
         try {
             Thread.sleep(3000);  //необходимо для прогрузки страницы
@@ -88,6 +90,7 @@ public class MainPage {
                 || driver.findElements(By.xpath("//span[contains(.,'Имя не найдено')]")).size() == 0);
     }
 
+    @Step("Открытие строки поиска")
     public MainPage clickSearch() {
         searchButton.get(1).click();
         try {
@@ -96,6 +99,7 @@ public class MainPage {
         return this;
     }
 
+    @Step("Ввод поискового запроса")
     public SearchPage searchTest() {
         searchField.sendKeys("Test", Keys.ENTER);
 
@@ -111,6 +115,7 @@ public class MainPage {
         return new SearchPage(driver);
     }
 
+    @Step("Переход по категории")
     public CategoryPage clickCategory() {
         firstCategory.click();
         try {
@@ -119,6 +124,7 @@ public class MainPage {
         return new CategoryPage(driver);
     }
 
+    @Step("Переход в меню профиля пользователя")
     public UserPage clickUser() {
         userButton.click();
         return new UserPage(driver);

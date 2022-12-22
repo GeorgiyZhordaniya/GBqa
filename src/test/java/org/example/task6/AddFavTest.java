@@ -1,12 +1,9 @@
 package org.example.task6;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import io.qameta.allure.Description;
+import io.qameta.allure.Issue;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,6 +34,9 @@ public class AddFavTest {
     }
 
     @Test
+    @DisplayName("Добавить пост в избранное")
+    @Description("Добавление поста в избранное")
+    @Issue(" https://www.livejournal.com/")
     void addFavTest() {
         new MainPage(driver).clickPost();
 
