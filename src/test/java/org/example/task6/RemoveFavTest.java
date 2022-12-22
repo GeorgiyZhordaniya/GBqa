@@ -1,10 +1,9 @@
 package org.example.task6;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.Description;
+import io.qameta.allure.Issue;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,6 +37,9 @@ public class RemoveFavTest {
 
 
     @Test
+    @DisplayName("Удаление поста из избранного")
+    @Description("Удаление поста из избранного")
+    @Issue(" https://www.livejournal.com/")
     void removeFavTest() {
         WebElement deleteButton = new MainPage(driver)
                 .clickUser()

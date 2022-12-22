@@ -1,5 +1,6 @@
 package org.example.task6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -26,6 +27,7 @@ public class UserPage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Переход во вкладку избранное")
     public UserPage clickFav() {
         favButton.click();
         return this;
@@ -37,6 +39,7 @@ public class UserPage {
         return this;
     }
 
+    @Step("Открыть окно управления")
     public UserPage clickControlFav() {
         favPopUp.click();
         return this;

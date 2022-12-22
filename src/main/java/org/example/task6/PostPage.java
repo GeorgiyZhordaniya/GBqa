@@ -1,5 +1,6 @@
 package org.example.task6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,6 +28,7 @@ public class PostPage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Клик по кнопке Добавить в избранное")
     public PostPage addFav() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", addFavButton.get(0));
         addFavButton.get(0).click();
@@ -37,6 +39,7 @@ public class PostPage {
         return addFavPopUp;
     }
 
+    @Step("Клик по кнопке Подписаться")
     public PostPage clickSubscribe() {
         subscribeButton.click();
         return this;

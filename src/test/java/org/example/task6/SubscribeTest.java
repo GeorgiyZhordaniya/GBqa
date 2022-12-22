@@ -1,10 +1,9 @@
 package org.example.task6;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.Description;
+import io.qameta.allure.Issue;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -37,6 +36,9 @@ public class SubscribeTest {
     }
 
     @Test
+    @DisplayName("Подписаться на пользователя поста")
+    @Description("Проверка подписки на пользователя")
+    @Issue(" https://www.livejournal.com/")
     void subscribeTest() {
 
         new MainPage(driver).clickPost();
@@ -50,6 +52,6 @@ public class SubscribeTest {
 
     @AfterAll
     static void close() {
-        //driver.quit();
+        driver.quit();
     }
 }

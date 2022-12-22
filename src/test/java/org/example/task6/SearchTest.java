@@ -3,10 +3,9 @@
 package org.example.task6;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.Description;
+import io.qameta.allure.Issue;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -41,6 +40,9 @@ public class SearchTest {
     }
 
     @Test
+    @DisplayName("Проверка поиска")
+    @Description("Проверка поискового запроса")
+    @Issue(" https://www.livejournal.com/")
     void searchFavTest() {
         String url = new MainPage(driver)
                 .clickSearch()
